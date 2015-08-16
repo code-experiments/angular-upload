@@ -1,0 +1,35 @@
+<html ng-app="mooshak">
+<head>
+	<script src="/angular/angular.min.js"></script>
+	<script src="/account.js"></script>
+</head>
+<body>
+<div ng-controller="MainCtrl">
+<h1>Edit your account</h1>
+
+<hr/>
+
+<h2>Your avatar</h2>
+
+<input type="file" id="file_input" file-on-change="uploadFile"/>
+
+<p id="status">Please select a file</p>
+<img style="border:1px solid gray;width:300px;" id="preview" />
+
+<h2>Your information</h2>
+
+<form method="POST" action="/submit_form/">
+	<input type="hidden" id="avatar_url" name="avatar_url" value="/images/default.png"/>
+	<input type="text" name="username" placeholder="Username"/><br/>
+	<input type="text" name="full_name" placeholder="Full name"/><br/><br/>
+
+	<hr/>
+	<h2>Save changes</h2>
+
+	<input type="submit" value="Update profile"/>
+</form>
+
+
+</div>
+</body>
+</html>
